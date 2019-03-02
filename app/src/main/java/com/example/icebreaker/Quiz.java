@@ -11,4 +11,6 @@ public class Quiz extends AppCompatActivity {
         setContentView(R.layout.activity_quiz);
 //test
     }
+
+
 }

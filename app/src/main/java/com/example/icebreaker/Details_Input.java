@@ -1,5 +1,6 @@
 package com.example.icebreaker;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.support.v7.app.AppCompatActivity;
@@ -17,6 +18,12 @@ public class Details_Input extends AppCompatActivity {
     EditText name, uni, colour, editor;
     RadioButton cake, biscuit, tabs, spaces, dark, light;
     Button save;
+
+    String nameValue, uniValue, colourValue, editorValue, jaffa, tabsSpaces, mode;
+
+    //hardcoded lists
+    String[] editors = {"Atom", "Nano"};
+    String[] colours = {"Red", "Blue"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,27 +47,61 @@ public class Details_Input extends AppCompatActivity {
     }
 
     public void generateText(View view){
-        String nameValue = name.getText().toString();
-        String uniValue = uni.getText().toString();
-        String colourValue = colour.getText().toString();
-        String editorValue = editor.getText().toString();
+        nameValue = name.getText().toString();
+        uniValue = uni.getText().toString();
+        colourValue = colour.getText().toString();
+        editorValue = editor.getText().toString();
 
-        Boolean cakeValue = cake.isSelected();
-        Boolean biscuitValue = biscuit.isSelected();
 
-        String jaffa = "";
+        Boolean cakeValue, biscuitValue, tabsValue, spacesValue, lightValue, darkValue;
+        cakeValue = cake.isSelected();
+        biscuitValue = biscuit.isSelected();
+        tabsValue = tabs.isSelected();
+        spacesValue = spaces.isSelected();
+        lightValue = light.isSelected();
+        darkValue = dark.isSelected();
 
-        if(cakeValue)
+        jaffa = ""; tabsSpaces = ""; mode = "";
+
+        if(cakeValue) {
             jaffa = "cake";
-        else if(biscuitValue)
+        }else if(biscuitValue) {
             jaffa = "biscuit";
+        }
 
-        String output = "My name is " + nameValue + ". " + "I go to " + uniValue + ". " + "My favourite colour is "
-                 + colourValue + ". " + "My favourite editor is " + editorValue + ". " + "A Jaffa Cake is definately a "
-                + jaffa + "";
-                //". " + "I always use " + tabsspaces + ". " + "I prefer " + mode + ".";
+        if(tabsValue) {
+            tabsSpaces = "tabs";
+        }else if(spacesValue) {
+            tabsSpaces = "spaces";
+        }
+
+        if(lightValue) {
+            mode = "light mode";
+        }else if(darkValue) {
+            mode = "dark mode";
+        }
+
+        String output = "My name is " + nameValue + ". " + "I go to " + uniValue + ". ";
+
+        /*+ "My favourite colour is "
+                 + colourValue + ". " + "My favourite editor is " + editorValue + ". " + "A Jaffa Cake is definitely a "
+                + jaffa + . " + "I always use " + tabsspaces + ". " + "I prefer " + mode + ".";*/
 
         Toast.makeText(Details_Input.this, output, Toast.LENGTH_LONG).show();
+    }
+
+
+    public void continueToQuiz(View view) {
+        generateText(view);
+
+        //True statements
+        String statementJaffa = "A Jaffa Cake is definitely a " + jaffa;
+        String statementTabs = "I always use " + tabsSpaces;
+        String statementMode = "I always use " + mode;
+
+        Intent intent = new Intent(Details_Input.this, Quiz.class);
+        startActivity(intent);
+        return;
     }
 }
 
