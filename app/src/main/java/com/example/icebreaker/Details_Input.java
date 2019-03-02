@@ -15,7 +15,7 @@ public class Details_Input extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details__input);
     }
-    String name, uni, colour, editor, jaffa, tabspaces, mode;
+
     public String generateText(){
         return "My name is " + name + ". " + "I go to " + uni + ". " + "My favourite colour is "
                 + colour + ". " + "My favourite editor is " + editor + ". " + "A Jaffa Cake is definately a "
@@ -23,6 +23,7 @@ public class Details_Input extends AppCompatActivity {
 }
 
     String name, uni, colour, editor, jaffa, tabsspaces, mode;
+
 
     public Details_Input() {
         this.name = findViewById(R.id.name).toString();
