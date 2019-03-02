@@ -3,7 +3,7 @@ package com.example.icebreaker;
 import android.os.Bundle;
 
 import android.support.v7.app.AppCompatActivity;
-import java.lang.String;
+//import java.lang.String;
 
 import android.widget.EditText;
 
