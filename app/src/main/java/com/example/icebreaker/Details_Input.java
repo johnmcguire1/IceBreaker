@@ -100,6 +100,10 @@ public class Details_Input extends AppCompatActivity {
         String statementMode = "I always use " + mode;
 
         Intent intent = new Intent(Details_Input.this, Quiz.class);
+        intent.putExtra("statementJaffa", statementJaffa);
+        intent.putExtra("statementTabs", statementTabs);
+        intent.putExtra("statementMode", statementMode);
+
         startActivity(intent);
         return;
     }
