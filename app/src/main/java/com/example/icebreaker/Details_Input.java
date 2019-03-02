@@ -22,8 +22,6 @@ public class Details_Input extends AppCompatActivity {
                 + jaffa + ". " + "I always use " + tabspaces + ". " + "I prefer " + mode + ".";
 }
 
-    String name, uni, colour, editor, jaffa, tabsspaces, mode;
-
     public Details_Input() {
         this.name = findViewById(R.id.name).toString();
         uni = findViewById(R.id.university).toString();
