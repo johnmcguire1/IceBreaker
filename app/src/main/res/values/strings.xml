@@ -3,4 +3,5 @@
     <string name="buildicetext">Build the Ice</string>
     <string name="breakicetext">Break the Ice</string>
     <string name="cakeorbiscuit">Is a Jaffa cake a cake or a biscuit?</string>
+    <string name="save">Save</string>
 </resources>
