@@ -48,8 +48,9 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="false"
+                android:singleLine="true"
                 android:hint="Name"
-                 />
+                android:layout_alignParentLeft="true" />
 
             <EditText
                 android:id="@+id/age"
@@ -62,7 +63,9 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="false"
-                android:hint="Age" />
+                android:hint="Age"
+                android:singleLine="true"
+                android:layout_alignParentLeft="true" />
 
             <EditText
                 android:id="@+id/university"
@@ -75,7 +78,9 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="false"
-                android:hint="University" />
+                android:singleLine="true"
+                android:hint="University"
+                android:layout_alignParentLeft="true" />
 
             <EditText
                 android:id="@+id/colour"
@@ -88,7 +93,9 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="false"
-                android:hint="Favourite Colour" />
+                android:singleLine="true"
+                android:hint="Favourite Colour"
+                android:layout_alignParentLeft="true" />
 
             <EditText
                 android:id="@+id/siblings"
@@ -98,9 +105,9 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="20dp"
-                android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="false"
+                android:singleLine="true"
                 android:hint="Number of Siblings" />
 
             <EditText
@@ -112,6 +119,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_alignParentStart="true"
+                android:singleLine="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="false"
                 android:hint="Favourite Text Editor"
@@ -128,7 +136,8 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="false"
-                android:text="Is a jaffa cake a cake or a biscuit?"/>
+                android:text="Is a jaffa cake a cake or a biscuit?"
+                android:layout_alignParentLeft="true" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
@@ -141,14 +150,12 @@
                     android:id="@+id/cake"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick=""
                     android:text="Cake" />
 
                 <RadioButton
                     android:id="@+id/biscuit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick=""
                     android:text="Biscuit" />
             </RadioGroup>
 
@@ -163,7 +170,8 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="false"
-                android:text="Do you prefer to use tabs or spaces?"/>
+                android:text="Do you prefer to use tabs or spaces?"
+                android:layout_alignParentLeft="true" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
@@ -176,14 +184,12 @@
                     android:id="@+id/tabs"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick=""
                     android:text="Tabs" />
 
                 <RadioButton
                     android:id="@+id/spaces"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick=""
                     android:text="Spaces" />
             </RadioGroup>
 
@@ -198,7 +204,8 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="false"
-                android:text="Do you prefer dark or light mode?"/>
+                android:text="Do you prefer dark or light mode?"
+                android:layout_alignParentLeft="true" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
@@ -211,14 +218,12 @@
                     android:id="@+id/dark"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick=""
                     android:text="Dark mode" />
 
                 <RadioButton
                     android:id="@+id/light"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick=""
                     android:text="Light mode" />
             </RadioGroup>
 
@@ -231,6 +236,7 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="300dp"
                 android:background="#6CC3FF"
+                android:onClick= "generateText"
                 android:text="Save and Submit"
                 />
 
