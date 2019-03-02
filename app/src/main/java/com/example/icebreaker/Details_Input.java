@@ -11,5 +11,4 @@ public class Details_Input extends AppCompatActivity {
         setContentView(R.layout.activity_details__input);
     }
 
-
 }
