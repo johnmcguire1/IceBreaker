@@ -236,7 +236,7 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="300dp"
                 android:background="#6CC3FF"
-                android:onClick= "generateText"
+                android:onClick= "continueToQuiz"
                 android:text="Save and Submit"
                 />
 
