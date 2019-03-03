@@ -64,10 +64,10 @@ public class Details_Input extends AppCompatActivity {
             editorValue = editor.getText().toString(); }
 
         //Boolean cakeValue = cake.isSelected();
-        Boolean biscuitValue = biscuit.isSelected();
-        Boolean tabsValue = tabs.isSelected();
+        boolean biscuitValue = biscuit.isSelected();
+        boolean tabsValue = tabs.isSelected();
        // Boolean spacesValue = spaces.isSelected();
-        Boolean darkValue = dark.isSelected();
+        boolean darkValue = dark.isSelected();
        // Boolean lightValue = light.isSelected();
         String jaffa = "";
         String tabsspaces = "";
@@ -96,5 +96,3 @@ public class Details_Input extends AppCompatActivity {
         Toast.makeText(Details_Input.this, output, Toast.LENGTH_LONG).show();
     }
 }
-
-
