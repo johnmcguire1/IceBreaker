@@ -13,17 +13,16 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 
+//ALSO DO AGE!
+
 public class Details_Input extends AppCompatActivity {
 
     EditText name, uni, colour, editor;
     RadioButton cake, biscuit, tabs, spaces, dark, light;
     Button save;
 
-    String nameValue, uniValue, colourValue, editorValue, jaffa, tabsSpaces, mode;
+    String nameValue, uniValue, colourValue, editorValue, jaffa, tabsSpaces, mode, notColour, notJaffa, notTabsSpaces, notMode;
 
-    //hardcoded lists
-    String[] editors = {"Atom", "Nano"};
-    String[] colours = {"Red", "Blue"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,44 +64,66 @@ public class Details_Input extends AppCompatActivity {
 
         if(cakeValue) {
             jaffa = "cake";
+            notJaffa = "biscuit";
         }else if(biscuitValue) {
             jaffa = "biscuit";
+            notJaffa = "cake";
         }
 
         if(tabsValue) {
             tabsSpaces = "tabs";
+            notTabsSpaces = "spaces";
         }else if(spacesValue) {
             tabsSpaces = "spaces";
+            notTabsSpaces = "tabs";
         }
 
         if(lightValue) {
             mode = "light mode";
+            notMode = "dark mode";
         }else if(darkValue) {
             mode = "dark mode";
+            notMode = "light mode";
         }
 
         String output = "My name is " + nameValue + ". " + "I go to " + uniValue + ". ";
-
-        /*+ "My favourite colour is "
-                 + colourValue + ". " + "My favourite editor is " + editorValue + ". " + "A Jaffa Cake is definitely a "
-                + jaffa + . " + "I always use " + tabsspaces + ". " + "I prefer " + mode + ".";*/
 
         Toast.makeText(Details_Input.this, output, Toast.LENGTH_LONG).show();
     }
 
 
     public void continueToQuiz(View view) {
+
+        String notColour, notEditor;
+
         generateText(view);
 
-        //True statements
-        String statementJaffa = "A Jaffa Cake is definitely a " + jaffa;
-        String statementTabs = "I always use " + tabsSpaces;
-        String statementMode = "I always use " + mode;
-
         Intent intent = new Intent(Details_Input.this, Quiz.class);
-        intent.putExtra("statementJaffa", statementJaffa);
-        intent.putExtra("statementTabs", statementTabs);
-        intent.putExtra("statementMode", statementMode);
+
+        //True statements
+
+        String[] statements = {"My favourite editor is " + editorValue, "My favourite colour is " + colourValue,
+                        "A Jaffa Cake is definitely a " + jaffa, "I always use " + tabsSpaces, "I always use " + mode};
+
+        intent.putExtra("statements", statements);
+
+        //False statements
+
+        if(colourValue.equals("red")) {
+            notColour = "blue";
+        }else {
+            notColour = "red";
+        }
+        if(editorValue.equals("Atom")) {
+            notEditor = "Nano";
+        }else{
+            notEditor = "Atom";
+        }
+
+        String[] notStatement = {"My favourite colour is " + notColour, "My favourite editor is " + notEditor,
+                "A Jaffa Cake is definitely a " + notJaffa, "I always use " + notTabsSpaces, "I always use " + notMode};
+
+        intent.putExtra("notStatements", notStatement);
 
         startActivity(intent);
         return;

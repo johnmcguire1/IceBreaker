@@ -6,16 +6,15 @@ import android.os.Bundle;
 
 public class Quiz extends AppCompatActivity {
 
-    String statementJaffa, statementTabs, statementMode;
+    String[] trueStatements, falseStatements;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
         Intent intent = getIntent();
-        statementJaffa = intent.getExtras().getString("statementJaffa");
-        statementTabs = intent.getExtras().getString("statementTabs");
-        statementMode = intent.getExtras().getString("statementMode");
+        trueStatements = intent.getExtras().getStringArray("statements");
+        falseStatements = intent.getExtras().getStringArray("nonStatements");
     }
 
 
