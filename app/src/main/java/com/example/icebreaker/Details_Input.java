@@ -23,7 +23,7 @@ public class Details_Input extends AppCompatActivity {
     RadioButton cake, biscuit, tabs, spaces, dark, light;
     Button save;
 
-    String nameValue, uniValue, colourValue, editorValue, jaffa, tabsSpaces, mode, notColour, notJaffa, notTabsSpaces, notMode;
+    String nameValue, uniValue, colourValue, editorValue, jaffa, tabsSpaces, mode, notJaffa, notTabsSpaces, notMode;
 
 
     @Override
@@ -51,11 +51,11 @@ public class Details_Input extends AppCompatActivity {
 
     public void generateText(View view){
 
-        String nameValue = "Ice Man Nice Man";
-        String uniValue = "Antarctican University of Political Science";
+        nameValue = "Ice Man Nice Man";
+        uniValue = "Antarctican University of Political Science";
         int ageValue = 80;
-        String colourValue = "Pink";
-        String editorValue = "Microsoft Word";
+        colourValue = "Pink";
+        editorValue = "Microsoft Word";
         String sibling = "";
 
         if (!name.getText().toString().matches("")) {
@@ -77,9 +77,9 @@ public class Details_Input extends AppCompatActivity {
        // Boolean spacesValue = spaces.isSelected();
         boolean darkValue = dark.isSelected();
        // Boolean lightValue = light.isSelected();
-        String jaffa = "";
+        jaffa = "";
         String tabsspaces = "";
-        String mode = "";
+        mode = "";
 
         if(biscuitValue)
             jaffa = "biscuit";
