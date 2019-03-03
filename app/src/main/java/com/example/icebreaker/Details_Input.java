@@ -55,7 +55,7 @@ public class Details_Input extends AppCompatActivity {
         if (!uni.getText().toString().matches("")) {
                     uniValue = uni.getText().toString(); }
         if (!siblings.getText().toString().matches("")) {
-            sibling = uni.getText().toString(); }
+            sibling = siblings.getText().toString(); }
         if (!age.getText().toString().matches("")) {
             ageValue = Integer.parseInt(age.getText().toString()); }
         if (!colour.getText().toString().matches("")) {
