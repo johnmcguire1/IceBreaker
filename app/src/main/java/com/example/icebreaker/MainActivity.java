@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
         return;
     }
 
+
+
     public void loadQuizActivity(View view) {
         Intent intent = new Intent(MainActivity.this, Quiz.class);
         startActivity(intent);

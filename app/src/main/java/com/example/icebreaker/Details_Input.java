@@ -1,10 +1,13 @@
 package com.example.icebreaker;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.support.v7.app.AppCompatActivity;
+
 import java.lang.String;
 import java.util.Objects;
+
 
 import android.view.View;
 import android.widget.Button;
@@ -13,11 +16,16 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 
+//ALSO DO AGE!
+
 public class Details_Input extends AppCompatActivity {
 
     EditText name, uni, colour, editor, age, siblings;
     RadioButton cake, biscuit, tabs, spaces, dark, light;
     Button save;
+
+    String nameValue, uniValue, colourValue, editorValue, jaffa, tabsSpaces, mode, notColour, notJaffa, notTabsSpaces, notMode;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +51,7 @@ public class Details_Input extends AppCompatActivity {
     }
 
     public void generateText(View view){
+
         String nameValue = "Ice Man Nice Man";
         String uniValue = "Antarctican University of Political Science";
         int ageValue = 80;
@@ -88,11 +97,47 @@ public class Details_Input extends AppCompatActivity {
         else
             mode = "light";
 
+        String output = "My name is " + nameValue + ". " + "I go to " + uniValue + ". ";
 
-        String output = "My name is " + nameValue + ", I am " + ageValue + " years old. I go to " + uniValue + ". " + "My favourite colour is "
-                 + colourValue + ". " + "My favourite editor is " + editorValue + ". " + "A Jaffa Cake is definitely a "
-                + jaffa + "" + ". " + "I always use " + tabsspaces + ". " + "I prefer " + mode + "mode. I have " + sibling + " siblings.";
 
         Toast.makeText(Details_Input.this, output, Toast.LENGTH_LONG).show();
+    }
+
+
+    public void continueToQuiz(View view) {
+
+        String notColour, notEditor;
+
+        generateText(view);
+
+        Intent intent = new Intent(Details_Input.this, Quiz.class);
+
+        //True statements
+
+        String[] statements = {"My favourite editor is " + editorValue, "My favourite colour is " + colourValue,
+                        "A Jaffa Cake is definitely a " + jaffa, "I always use " + tabsSpaces, "I always use " + mode};
+
+        intent.putExtra("statements", statements);
+
+        //False statements
+
+        if(colourValue.equals("red")) {
+            notColour = "blue";
+        }else {
+            notColour = "red";
+        }
+        if(editorValue.equals("Atom")) {
+            notEditor = "Nano";
+        }else{
+            notEditor = "Atom";
+        }
+
+        String[] notStatement = {"My favourite colour is " + notColour, "My favourite editor is " + notEditor,
+                "A Jaffa Cake is definitely a " + notJaffa, "I always use " + notTabsSpaces, "I always use " + notMode};
+
+        intent.putExtra("notStatements", notStatement);
+
+        startActivity(intent);
+        return;
     }
 }
