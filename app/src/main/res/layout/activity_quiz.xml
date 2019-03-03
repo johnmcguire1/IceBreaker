@@ -9,7 +9,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:ignore="ExtraText">
+        tools:ignore="ExtraText"
+        android:background="#B3DCF7">
 
         <TextView
             android:id="@+id/persontext"
