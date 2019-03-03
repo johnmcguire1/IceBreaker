@@ -15,15 +15,13 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
-
-
 public class Details_Input extends AppCompatActivity {
 
     EditText name, uni, colour, editor, age, siblings;
     RadioButton cake, biscuit, tabs, spaces, dark, light;
     Button save;
 
-    String nameValue, uniValue, colourValue, editorValue, jaffa, tabsSpaces, mode, notColour, notJaffa, notTabsSpaces, notMode;
+    String nameValue, uniValue, colourValue, editorValue, jaffa, tabsSpaces, mode, notJaffa, notTabsSpaces, notMode, output, notColour, notEditor;
 
 
     @Override
@@ -51,12 +49,12 @@ public class Details_Input extends AppCompatActivity {
 
     public void generateText(View view){
 
-        String nameValue = "Ice Man Nice Man";
-        String uniValue = "Antarctican University of Political Science";
+        nameValue = "Ice Man Nice Man";
+        uniValue = "Antarctican University of Political Science";
         int ageValue = 80;
-        String colourValue = "Pink";
-        String editorValue = "Microsoft Word";
-        String sibling = "";
+        colourValue = "Pink";
+        editorValue = "Microsoft Word";
+        String sibling = "15";
 
         if (!name.getText().toString().matches("")) {
                     nameValue = name.getText().toString();}
@@ -71,15 +69,13 @@ public class Details_Input extends AppCompatActivity {
         if (!editor.getText().toString().matches("")) {
             editorValue = editor.getText().toString(); }
 
-        //Boolean cakeValue = cake.isSelected();
         boolean biscuitValue = biscuit.isSelected();
         boolean tabsValue = tabs.isSelected();
-       // Boolean spacesValue = spaces.isSelected();
         boolean darkValue = dark.isSelected();
-       // Boolean lightValue = light.isSelected();
-        String jaffa = "";
-        String tabsspaces = "";
-        String mode = "";
+
+        jaffa = "";
+        tabsSpaces = "";
+        mode = "";
 
         if(biscuitValue)
             jaffa = "biscuit";
@@ -87,38 +83,22 @@ public class Details_Input extends AppCompatActivity {
             jaffa = "cake";
 
         if(tabsValue)
-            tabsspaces = "tabs";
+            tabsSpaces = "tabs";
         else
-            tabsspaces = "spaces";
+            tabsSpaces = "spaces";
 
         if(darkValue)
             mode = "dark";
         else
             mode = "light";
 
-        String output = "My name is " + nameValue + ". " + "I go to " + uniValue + ". ";
-
-
-        Toast.makeText(Details_Input.this, output, Toast.LENGTH_LONG).show();
+        output = "My name is " + nameValue + ". " + "I go to " + uniValue + ". ";
     }
 
 
     public void continueToQuiz(View view) {
 
-        String notColour, notEditor;
-
         generateText(view);
-
-        Intent intent = new Intent(Details_Input.this, Quiz.class);
-
-        //True statements
-
-        String[] statements = {"My favourite editor is " + editorValue, "My favourite colour is " + colourValue,
-                        "A Jaffa Cake is definitely a " + jaffa, "I always use " + tabsSpaces, "I always use " + mode};
-
-        intent.putExtra("statements", statements);
-
-        //False statements
 
         if(colourValue.equals("red")) {
             notColour = "blue";
@@ -131,11 +111,17 @@ public class Details_Input extends AppCompatActivity {
             notEditor = "Atom";
         }
 
+        String[] statements = {"My favourite editor is " + editorValue, "My favourite colour is " + colourValue,
+                "A Jaffa Cake is definitely a " + jaffa, "I always use " + tabsSpaces, "I always use " + mode};
+
+
         String[] notStatement = {"My favourite colour is " + notColour, "My favourite editor is " + notEditor,
                 "A Jaffa Cake is definitely a " + notJaffa, "I always use " + notTabsSpaces, "I always use " + notMode};
 
+        Intent intent = new Intent(Details_Input.this, Quiz.class);
+        intent.putExtra("statements", statements);
         intent.putExtra("notStatements", notStatement);
-
+        intent.putExtra("output", output);
         startActivity(intent);
         return;
     }
