@@ -2,13 +2,7 @@ package com.example.icebreaker;
 
 import android.content.Intent;
 import android.os.Bundle;
-
 import android.support.v7.app.AppCompatActivity;
-
-import java.lang.String;
-import java.util.Objects;
-
-
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,7 +17,7 @@ public class Details_Input extends AppCompatActivity {
     RadioButton cake, biscuit, tabs, spaces, dark, light;
     Button save;
 
-    String nameValue, uniValue, colourValue, editorValue, jaffa, tabsSpaces, mode, notColour, notJaffa, notTabsSpaces, notMode;
+    String nameValue, uniValue, colourValue, editorValue, jaffa, tabsSpaces, mode, notJaffa, notTabsSpaces, notMode;
 
 
     @Override
@@ -51,11 +45,11 @@ public class Details_Input extends AppCompatActivity {
 
     public void generateText(View view){
 
-        String nameValue = "Ice Man Nice Man";
-        String uniValue = "Antarctican University of Political Science";
+         nameValue = "Ice Man Nice Man";
+         uniValue = "Antarctican University of Political Science";
         int ageValue = 80;
-        String colourValue = "Pink";
-        String editorValue = "Microsoft Word";
+         colourValue = "Pink";
+         editorValue = "Microsoft Word";
         String sibling = "";
 
         if (!name.getText().toString().matches("")) {
