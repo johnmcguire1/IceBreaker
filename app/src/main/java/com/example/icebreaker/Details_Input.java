@@ -96,7 +96,7 @@ public class Details_Input extends AppCompatActivity {
         else
             mode = "light";
 
-        String output = "My name is " + nameValue + ". " + "I go to " + uniValue + ". " + "I'm " + ageValue + " years old.";
+        String output = "My name is " + nameValue + ". " + "I go to " + uniValue + ". ";
 
 
         Toast.makeText(Details_Input.this, output, Toast.LENGTH_LONG).show();
