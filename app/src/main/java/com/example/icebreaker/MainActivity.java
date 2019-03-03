@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void loadInfo(View view) {
         String information = "This game is played in the following way: the first person enters their details in a survey," +
-                "then passes the phone to the next person. That person has to choose a false statement out of three which appear on the " +
+                " then passes the phone to the next person. That person has to choose a false statement out of three which appear on the " +
                 "next screen based on the previous person's answers (they try to guess whether a statement is true or false." +
                 "Then this person enters their own details and passes the phone to the next.";
 

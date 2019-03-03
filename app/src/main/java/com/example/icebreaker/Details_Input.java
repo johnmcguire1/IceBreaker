@@ -22,7 +22,7 @@ public class Details_Input extends AppCompatActivity {
     Button save;
 
     String nameValue, uniValue, colourValue, editorValue, jaffa, tabsSpaces, mode, notJaffa, notTabsSpaces, notMode, output, notColour, notEditor;
-
+    int ageValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +51,7 @@ public class Details_Input extends AppCompatActivity {
 
         nameValue = "Ice Man Nice Man";
         uniValue = "Antarctican University of Political Science";
-        int ageValue = 80;
+        ageValue = 80;
         colourValue = "Pink";
         editorValue = "Microsoft Word";
         String sibling = "15";
@@ -92,7 +92,7 @@ public class Details_Input extends AppCompatActivity {
         else
             mode = "light";
 
-        output = "My name is " + nameValue + ". " + "I go to " + uniValue + ". ";
+        output = "My name is " + nameValue + ". " + "I go to " + uniValue + ". " + "I am " + ageValue + " years old.";
     }
 
 
@@ -123,6 +123,7 @@ public class Details_Input extends AppCompatActivity {
         intent.putExtra("notStatements", notStatement);
         intent.putExtra("output", output);
         startActivity(intent);
-        return;
+        finish();
+
     }
 }
