@@ -9,6 +9,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#74C4DA"
         tools:ignore="ExtraText">
 
         <TextView
@@ -22,9 +23,11 @@
             android:layout_alignParentRight="false"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="100dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="100dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
+            android:textAlignment="center"
+            android:textSize="20dp"
             tools:layout_marginTop="70dp" />
 
         <Button
@@ -32,11 +35,13 @@
             android:layout_width="10000dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/persontext"
-            android:layout_marginTop="300dp"
+            android:layout_marginTop="150dp"
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="100dp"
+            android:fontFamily="Times"
             android:layout_marginRight="100dp"
-            android:background="#6CC3FF"
+            android:background="#4CACE2"
+            android:onClick="check1"
             tools:layout_marginTop="400dp"
             />
 
@@ -48,8 +53,10 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="100dp"
+            android:fontFamily="Times"
             android:layout_marginRight="100dp"
-            android:background="#6CC3FF"
+            android:onClick="check2"
+            android:background="#4CACE2"
 
             />
 
@@ -59,11 +66,22 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/Question2"
             android:layout_marginTop="10dp"
+            android:fontFamily="Times"
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="100dp"
             android:layout_marginRight="100dp"
-            android:background="#6CC3FF"
+            android:onClick="check3"
+            android:background="#4CACE2"
             />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            app:srcCompat="@drawable/logo" />
 
     </RelativeLayout>
 

@@ -4,22 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#74C4DA"
     tools:context=".MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="0dp">
 
-        <android.support.v7.widget.AppCompatImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/stacshack"
-            android:layout_marginStart="150dp"
-            android:layout_marginLeft="150dp"
-            android:layout_marginTop="200dp"
-            android:layout_marginEnd="144dp"
-            android:layout_marginRight="144dp"
-            />
         <Button
             android:id="@+id/info"
             android:layout_width="wrap_content"
@@ -32,7 +25,9 @@
             android:layout_marginStart="1dp"
             android:layout_marginLeft="3dp"
             android:layout_marginTop="3dp"
+            android:fontFamily="Times"
             android:layout_marginEnd="365dp"
+            android:background="#4CACE2"
             android:layout_marginRight="3dp"
             android:onClick="loadInfo"
             android:text="@string/information"
@@ -52,6 +47,7 @@
             android:layout_marginTop="350dp"
             android:layout_marginEnd="139dp"
             android:layout_marginRight="144dp"
+            android:background="#4CACE2"
             android:onClick="loadDetailsActivity"
             android:text="@string/buildicetext"
             tools:layout_marginTop="350dp" />
@@ -70,10 +66,14 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="139dp"
             android:layout_marginRight="139dp"
+            android:onClick="loadQuizActivity"
+            android:fontFamily="Times"
+            android:background="#4CACE2"
             android:text="@string/breakicetext"
             tools:layout_marginBottom="317dp"
-            tools:layout_marginTop="20dp"
-            android:onClick="loadQuizActivity"/>
+            tools:layout_marginTop="20dp" />
+
+
 
 
     </RelativeLayout>

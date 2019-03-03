@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Details_Input">
-    --just testing if I can push
 
     <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+        android:background="#74C4DA"
         tools:ignore="ExtraText">
         <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
@@ -34,6 +34,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="19dp"
                 android:layout_marginRight="10dp"
+                android:textSize="20dp"
                 android:text="PLEASE ANSWER THE FOLLOWING QUESTIONS:"
                  />
 
@@ -136,6 +137,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="false"
+                android:textSize="15dp"
                 android:text="Is a jaffa cake a cake or a biscuit?"
                 android:layout_alignParentLeft="true" />
 
@@ -170,6 +172,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="false"
+                android:textSize="15dp"
                 android:text="Do you prefer to use tabs or spaces?"
                 android:layout_alignParentLeft="true" />
 
@@ -204,6 +207,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="false"
+                android:textSize="15dp"
                 android:text="Do you prefer dark or light mode?"
                 android:layout_alignParentLeft="true" />
 
@@ -235,7 +239,8 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="300dp"
-                android:background="#6CC3FF"
+                android:background="#4CACE2"
+                android:fontFamily="Times"
                 android:onClick= "continueToQuiz"
                 android:text="Save and Submit"
                 />
