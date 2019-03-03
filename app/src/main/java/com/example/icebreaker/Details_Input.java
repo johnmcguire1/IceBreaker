@@ -4,7 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import android.support.v7.app.AppCompatActivity;
-//import java.lang.String;
+
+import java.lang.String;
+import java.util.Objects;
+
 
 import android.view.View;
 import android.widget.Button;
@@ -17,7 +20,7 @@ import android.widget.Toast;
 
 public class Details_Input extends AppCompatActivity {
 
-    EditText name, uni, colour, editor;
+    EditText name, uni, colour, editor, age, siblings;
     RadioButton cake, biscuit, tabs, spaces, dark, light;
     Button save;
 
@@ -31,9 +34,11 @@ public class Details_Input extends AppCompatActivity {
 
         //EditText:
         name = findViewById(R.id.name);
+        age = findViewById(R.id.age);
         uni = findViewById(R.id.university);
         colour = findViewById(R.id.colour);
         editor = findViewById(R.id.texteditor);
+        siblings = findViewById(R.id.siblings);
 
         //RadioButtons:
         cake = findViewById(R.id.cake);
@@ -46,47 +51,54 @@ public class Details_Input extends AppCompatActivity {
     }
 
     public void generateText(View view){
-        nameValue = name.getText().toString();
-        uniValue = uni.getText().toString();
-        colourValue = colour.getText().toString();
-        editorValue = editor.getText().toString();
 
+        String nameValue = "Ice Man Nice Man";
+        String uniValue = "Antarctican University of Political Science";
+        int ageValue = 80;
+        String colourValue = "Pink";
+        String editorValue = "Microsoft Word";
+        String sibling = "";
 
-        Boolean cakeValue, biscuitValue, tabsValue, spacesValue, lightValue, darkValue;
-        cakeValue = cake.isSelected();
-        biscuitValue = biscuit.isSelected();
-        tabsValue = tabs.isSelected();
-        spacesValue = spaces.isSelected();
-        lightValue = light.isSelected();
-        darkValue = dark.isSelected();
+        if (!name.getText().toString().matches("")) {
+                    nameValue = name.getText().toString();}
+        if (!uni.getText().toString().matches("")) {
+                    uniValue = uni.getText().toString(); }
+        if (!siblings.getText().toString().matches("")) {
+            sibling = siblings.getText().toString(); }
+        if (!age.getText().toString().matches("")) {
+            ageValue = Integer.parseInt(age.getText().toString()); }
+        if (!colour.getText().toString().matches("")) {
+            colourValue = colour.getText().toString(); }
+        if (!editor.getText().toString().matches("")) {
+            editorValue = editor.getText().toString(); }
 
-        jaffa = ""; tabsSpaces = ""; mode = "";
+        //Boolean cakeValue = cake.isSelected();
+        boolean biscuitValue = biscuit.isSelected();
+        boolean tabsValue = tabs.isSelected();
+       // Boolean spacesValue = spaces.isSelected();
+        boolean darkValue = dark.isSelected();
+       // Boolean lightValue = light.isSelected();
+        String jaffa = "";
+        String tabsspaces = "";
+        String mode = "";
 
-        if(cakeValue) {
-            jaffa = "cake";
-            notJaffa = "biscuit";
-        }else if(biscuitValue) {
+        if(biscuitValue)
             jaffa = "biscuit";
-            notJaffa = "cake";
-        }
+        else
+            jaffa = "cake";
 
-        if(tabsValue) {
-            tabsSpaces = "tabs";
-            notTabsSpaces = "spaces";
-        }else if(spacesValue) {
-            tabsSpaces = "spaces";
-            notTabsSpaces = "tabs";
-        }
+        if(tabsValue)
+            tabsspaces = "tabs";
+        else
+            tabsspaces = "spaces";
 
-        if(lightValue) {
-            mode = "light mode";
-            notMode = "dark mode";
-        }else if(darkValue) {
-            mode = "dark mode";
-            notMode = "light mode";
-        }
+        if(darkValue)
+            mode = "dark";
+        else
+            mode = "light";
 
         String output = "My name is " + nameValue + ". " + "I go to " + uniValue + ". ";
+
 
         Toast.makeText(Details_Input.this, output, Toast.LENGTH_LONG).show();
     }
@@ -129,5 +141,3 @@ public class Details_Input extends AppCompatActivity {
         return;
     }
 }
-
-
