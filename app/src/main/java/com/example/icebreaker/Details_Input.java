@@ -13,7 +13,6 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 
-//ALSO DO AGE!
 
 public class Details_Input extends AppCompatActivity {
 
