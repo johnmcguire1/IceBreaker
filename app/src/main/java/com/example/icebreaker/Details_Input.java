@@ -56,6 +56,7 @@ public class Details_Input extends AppCompatActivity {
         editorValue = "Microsoft Word";
         String sibling = "15";
 
+
         if (!name.getText().toString().matches("")) {
                     nameValue = name.getText().toString();}
         if (!uni.getText().toString().matches("")) {

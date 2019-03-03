@@ -74,14 +74,7 @@
             android:background="#4CACE2"
             />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="100dp"
-            android:layout_marginRight="100dp"
-            app:srcCompat="@drawable/logo" />
+
 
     </RelativeLayout>
 

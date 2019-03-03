@@ -33,6 +33,7 @@
             android:text="@string/information"
             tools:layout_marginTop="0dp" />
 
+
         <Button
             android:id="@+id/buildice"
             android:layout_width="wrap_content"
